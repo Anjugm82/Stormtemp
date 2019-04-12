@@ -1,25 +1,38 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+							 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller
+{
 
+    public function __construct()
+    {
+        parent::__construct();
+       
+        $this->load->helper(array('form', 'url', 'html'));
+    }
+	
 	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
+* This function 'll load the home page with the jason decoded weather details of Dublin city.
+*
+* @access public
+
+* @return 
+*/
+
+    public function index()
+    {
+        $url = "http://api.openweathermap.org/data/2.5/forecast?q=Dublin,IE&appid=d828bc57d263d11b348eba143fa7c5c8";
+
+        $contents = file_get_contents($url);
+        $climas['clima'] = json_decode($contents);
+        
+
+        $this->load->view('welcome_message', $climas);
+       
+
+    }
+
+	
+
 }
+
