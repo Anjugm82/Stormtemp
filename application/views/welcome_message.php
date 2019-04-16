@@ -54,6 +54,15 @@ b
 
 
 </style>
+
+
+<?php
+
+?>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<center>
 <h1>
 <?php
 $cityname = $clima->city->name; 
@@ -513,5 +522,13 @@ $pressure=$clima->list[36]->main->pressure;
 
 </div>
 
+
+
+
+
+
+
+
+<center><h1><a href="<?php echo base_url(); ?>index.php/gallerys">Gallery</a></h1></center>
 
 
