@@ -38,8 +38,36 @@ class imagemodel extends CI_Model
         return $query->result_array();
 	   
 	}
+	/**
+* This function 'll insert the smtp config values to the database.
+@params variable,Array
+* @access private
 
+*/
+		public function smtpinsert($tablename,$smtp) 
+	{
+		$this->db->insert($tablename, $smtp);
+	   
+	}
+		/**
+* This function 'll fetch smtp config values from the database.
 
+* @access private
+* @return Array 
+
+*/
+	
+	
+	public function smtpcheck() 
+	{
+		$this->db->select("*");
+		$this->db->from("smtp");
+	
+	   $query = $this->db->get();
+
+        return $query->num_rows();
+	   
+	}
 	
 	
 	

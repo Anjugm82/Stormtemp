@@ -55,3 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['gallerys'] = 'welcome/gallery';
 
 $route['imageuploads'] = 'welcome/imageupload';
+
+$route['smtpconfig'] = 'welcome/smtp';
+$route['smtpadd'] = 'welcome/smtpinsert';
