@@ -58,3 +58,5 @@ $route['imageuploads'] = 'welcome/imageupload';
 
 $route['smtpconfig'] = 'welcome/smtp';
 $route['smtpadd'] = 'welcome/smtpinsert';
+$route['smtpedits'] = 'welcome/smtpedit';
+$route['smtpedited'] = 'welcome/smtpupdate';

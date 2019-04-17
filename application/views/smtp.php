@@ -59,7 +59,22 @@ td
 </div>
 </br>
 
+<div class="row">
+<div class="col-md-12">
+<center>
+<div style="border:2px solid grey; width:600px;">
+<h4>Click here to edit or delete your smtp configurations</h4>
+<form action="<?php echo base_url(); ?>index.php/smtpedits" method="post">
+<input type="hidden" name="id" value="" />
+<input type="submit" class="btn btn-warning" value="edit/delete" name="edit" />
 
+</form>
+</div>
+</center>
+
+
+</div>
+</div>
 </br>
 </br>
 

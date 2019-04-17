@@ -95,6 +95,125 @@ class Welcome extends CI_Controller
 * @return 
 */
 
+      public function smtp()
+    {
+        
+        
+        $this->load->view('smtp');
+       
+
+    }
+
+
+/**
+* This function 'll  insert the new smtp settings to database and check for weather there is any previous smtp configurations exits in database.  . 
+*
+* @access private
+
+* @return 
+*/
+    
+    
+    
+      public function smtpinsert()
+    {
+         $this->load->model('imagemodel');
+        $this->load->helper(array('form', 'url', 'html'));
+        
+        if ($_POST['submit']) {
+            $smtpget=$this->imagemodel->smtpcheck();
+            if($smtpget>0)
+            {
+                
+                $this->session->set_flashdata('thunder', 'Please edit or remove the previous smtp configuration to add new one.');
+         redirect(base_url() . 'index.php/smtpconfig');
+            }
+            else
+            {
+    
+             $smtparr = array(
+                'host' => $_POST['host'], 
+                'port' => $_POST['port'], 
+                'username' => $_POST['username'],
+                'password' =>$_POST['password'],
+                
+
+            );
+            $this->imagemodel->smtpinsert('smtp', $smtparr);
+
+$this->session->set_flashdata('thunderstorm', 'New smtp settings are configured.');
+         redirect(base_url() . 'index.php/smtpconfig');
+
+    }
+        }
+    
+    }
+    
+    /**
+* This function is to edit the Previous stmtp configurations in database    . 
+*
+* @access private
+
+* @return 
+*/
+    
+    
+    
+     public function smtpedit()
+    {
+         $this->load->model('imagemodel');
+        $this->load->helper(array('form', 'url', 'html'));
+            
+            $smtpedit=$this->imagemodel->smtpedit();
+              
+              $data['smtped'] = $smtpedit;
+              if(empty($smtpedit))
+              {
+                  $this->session->set_flashdata('thunders', 'No smtp details to edit,Please add New smtp configurations.');
+              }
+        
+       
+        $this->load->view('smtpedit', $data);
+
+    }
+
+        
+     public function smtpupdate()
+    {
+         $this->load->model('imagemodel');
+        $this->load->helper(array('form', 'url', 'html'));
+            
+            if ($_POST['submit']) {
+                
+                 $smtparr = array(
+                 'id'=>$_POST['id'],
+                'host' => $_POST['host'], 
+                'port' => $_POST['port'], 
+                'username' => $_POST['username'],
+                'password' =>$_POST['password'],
+                
+
+            );
+            $this->imagemodel->smtpupdate('smtp', $smtparr);
+                $this->session->set_flashdata('thunderstorm', 'Successfully edited your smtp configurations.');
+            }
+            if ($_POST['delete']) {
+                
+                 $smtparr = array(
+                 'id'=>$_POST['id'],
+         
+            );
+            $this->imagemodel->smtpdelete('smtp', $smtparr);
+                $this->session->set_flashdata('thunderstorm', 'Successfully removed your smtp configurations,Add a new one.');
+            }
+            
+        
+        redirect(base_url() . 'index.php/smtpconfig');
+        
+        
+        
+    
+    }
 	
 
 }

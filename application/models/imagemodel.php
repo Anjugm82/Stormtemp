@@ -69,6 +69,53 @@ class imagemodel extends CI_Model
 	   
 	}
 	
+		/**
+* This function 'll fetch smtp config values from the database.
+
+* @access private
+* @return Array 
+
+*/
+	
+
+	public function smtpedit() 
+	{
+		$this->db->select("*");
+		$this->db->from("smtp");
+	
+	   $query = $this->db->get();
+
+        return $query->result_array();
+	   
+	}
+	
+		/**
+* This function 'll update smtp config values to the database.
+@params variable,Array
+* @access private
+
+
+*/
+
+	public function smtpupdate($tablename, $smtp) 
+	{
+		$this->db->update($tablename, $smtp);
+	   
+	}
+	
+/**
+* This function 'll delete the smtp values in the database.
+@params variable,Array
+* @access private
+
+
+*/
+	
+	public function smtpdelete($tablename, $smtp) 
+	{
+		$this->db->delete($tablename, $smtp);
+	   
+	}
 	
 	
 }
