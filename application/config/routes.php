@@ -55,6 +55,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['gallerys'] = 'welcome/gallery';
 
 $route['imageuploads'] = 'welcome/imageupload';
+$route['mail_storm'] = 'welcome/stormmail';
+$route['storm_mail'] = 'welcome/stormmailsubmit';
+
 
 $route['smtpconfig'] = 'welcome/smtp';
 $route['smtpadd'] = 'welcome/smtpinsert';

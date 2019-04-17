@@ -32,6 +32,22 @@ class Welcome extends CI_Controller
 
     }
 
+    /**
+* This function 'll load the smtp page to add new smtp
+*
+* @access public
+
+* @return 
+*/
+    
+      public function smtp()
+    {
+        
+        
+        $this->load->view('smtp');
+       
+
+    }
 	
 
 		/**

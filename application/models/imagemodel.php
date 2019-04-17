@@ -117,6 +117,27 @@ class imagemodel extends CI_Model
 	   
 	}
 	
+		/**
+* This function 'll fetch the smtp values from the database.
+@params variable
+* @access private
+* @return Array 
+
+
+*/
+	
+	
+	public function smtpget($tablename) 
+	{
+		$this->db->select("*");
+		$this->db->from($tablename);
+	
+	   $query = $this->db->get();
+
+        return $query->result();
+	   
+	}
+	
 	
 }
 ?>
