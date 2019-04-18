@@ -73,6 +73,48 @@ body
 </center>
 </div>
 </div>
+</br>
+</br>
+<div class="row">
+<div class="col-md-12">
+<center>
+
+<div style="border:2px grey solid;">
+</br>
+<p style=" font-size:18px; font-weight:bold;">Select cities to get current weather details. </p>
+</br>
+</br>
+
+</br>
+<form action="<?php echo base_url(); ?>index.php/storm_mail2" method="post">
+<div style="border:2px solid grey; width:700px; font-size:20px; font-weight:bold;">
+<input onclick="check_finder(this)" id="0" type="radio" value="Dublin" name="dublin">Dublin
+<input onclick="check_finder(this)" id="0" type="radio" value="Cork" name="cork">Cork
+<input onclick="check_finder(this)" id="0" type="radio" value="Limerick" name="limerick">Limerick
+<input onclick="check_finder(this)" id="0" type="radio" value="Galway" name="galway">Galway
+<input onclick="check_finder(this)" id="0" type="radio" value="Swords" name="swords">Swords
+<input onclick="check_finder(this)" id="0" type="radio" value="Dundalk" name="dundalk">Dundalk</br>
+</div>
+</br>
+<div>
+	<label for="mail_re">Enter email Id to send report:</label>
+	<input type="email" name="mail_re" placeholder="Enter mail id here !!!" required>
+</div>
+</br>
+</br>
+
+
+<input  type="submit" class="btn btn-primary" value="submit" name="submits" />
+<p style=" font-size:18px; font-weight:bold;"></p>
+</form>
+</div>
+</center>
+
+</div>
+</div>
+</br>
+</br>
+
 
 </div>
 </body>

@@ -104,7 +104,7 @@ class Welcome extends CI_Controller
     }
 	
 /**
-* This function 'll load the smtp page to add new smtp
+* This function 'll load the view page to search and send mail for thunderstorm and current weather.
 *
 * @access public
 

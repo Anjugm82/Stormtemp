@@ -57,8 +57,7 @@ $route['gallerys'] = 'welcome/gallery';
 $route['imageuploads'] = 'welcome/imageupload';
 $route['mail_storm'] = 'welcome/stormmail';
 $route['storm_mail'] = 'welcome/stormmailsubmit';
-
-
+$route['storm_mail2'] = 'welcome/stormmailsubmitcnt';
 $route['smtpconfig'] = 'welcome/smtp';
 $route['smtpadd'] = 'welcome/smtpinsert';
 $route['smtpedits'] = 'welcome/smtpedit';
