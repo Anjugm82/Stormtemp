@@ -25,7 +25,7 @@ class Welcome extends CI_Controller
 
         $contents = file_get_contents($url);
         $climas['clima'] = json_decode($contents);
-        
+        $this->load->view('header', $climas);
 
         $this->load->view('welcome_message', $climas);
        

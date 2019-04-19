@@ -44,6 +44,7 @@ class imagemodel extends CI_Model
 * @access private
 
 */
+
 		public function smtpinsert($tablename,$smtp) 
 	{
 		$this->db->insert($tablename, $smtp);
